@@ -1,4 +1,15 @@
 # Implement a function to check if a linked list is a palindrome
+def palindromeusingStack(head):
+# Function to check if the linked list is a palindrome
+# Key challenges are to identify the size, if it is not avaliable then we run one pointer till the end other till half
+	end=half=head
+	while(end):
+		end=end.next
+		if(end==None):
+			break
+		end=end.next
+		half=half.next
+	print half, end
 
 def palindrome(head):
 # Function to check if linked list is a palindrome
@@ -36,11 +47,11 @@ for i in range(0,10):
 	runner.next=Node(i)
 	runner=runner.next
 
-for i in range(10,-1,-1):
+for i in range(9,-1,-1):
 	runner.next=Node(i)
 	runner=runner.next
 
 printList(l1.next)
 
 print 
-palindrome(l1.next)
+palindromeusingStack(l1)
